@@ -6,7 +6,7 @@ const express = require('express')
 const app = express()
 const bcrypt = require('bcrypt')
 const passport = require('passport')
-const flashX = require('express-flash')
+const flash = require('express-flash')
 const session = require('express-session')
 const methodOverride = require('method-override')
 
@@ -21,7 +21,7 @@ const users = []
 
 app.set('view-engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
-app.use(flashX())
+app.use(flash())
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
